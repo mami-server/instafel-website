@@ -10,11 +10,11 @@ export function Header() {
           </b>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link href="/guide" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
-            Guide
-          </Link>
           <Link href="/library_backup" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
-            BLibrary
+            Backups
+          </Link>
+          <Link href="https://t.me/instafel" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
+          Telegram
           </Link>
           <Link href="/download?version=latest" className="text-sm font-medium hover:underline underline-offset-4" prefetch={false}>
             Download

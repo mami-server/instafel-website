@@ -95,6 +95,9 @@ export default function Backup() {
                 <Button onClick={() => handleDownload(id, data.backup_version)} size="lg">
                   Download Backup
                 </Button>
+                <Button onClick={openModal} variant="outline" size="lg">
+                  Open in Instafel
+                </Button>
                 <OpenInInstafelComponent />
               </div>
             </div>
