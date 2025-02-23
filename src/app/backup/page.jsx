@@ -25,7 +25,7 @@ export default function Backup() {
   }, [id]);
 
   const handleDownload = async (id, version) => {
-    const response = await fetch(`https://raw.githubusercontent.com/instafel/backups/refs/heads/main/${id}/backup.json`);
+    const response = await fetch(`https://raw.githubusercontent.com/instafel/backups/refs/heads/main/${id}/backup.ibackup`);
 
     if (!response.ok) {
       console.error("Failed to fetch the file");
@@ -33,7 +33,7 @@ export default function Backup() {
     }
 
     const jsonData = await response.json();
-    const fileName = `${id}_v${version}.json`;
+    const fileName = `${id}_${version}.ibackup`;
 
     const file = new Blob([JSON.stringify(jsonData, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(file);
@@ -92,7 +92,7 @@ export default function Backup() {
                 </div>
               </div>
               <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                <Button onClick={() => handleDownload(id, data.backup_version)} size="lg">
+                <Button onClick={() => handleDownload(id, data.version_name)} size="lg">
                   Download Backup
                 </Button>
                 <OpenInInstafelComponent />
