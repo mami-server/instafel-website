@@ -35,7 +35,7 @@ export default function Backup() {
     const jsonData = await response.json();
     const fileName = `${id}_${version}.ibackup`;
 
-    const file = new Blob([JSON.stringify(jsonData, null, 2)], { type: 'application/json' });
+    const file = new Blob([JSON.stringify(jsonData, null, 2)], { type: 'application/octet-stream' });
     const url = URL.createObjectURL(file);
     const a = document.createElement('a');
     a.href = url;
